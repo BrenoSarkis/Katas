@@ -10,11 +10,16 @@ namespace Katas.PrimeFactors
     [TestFixture]
     public class PrimeFactorsTests
     {
+        private IEnumerable<int> ListOf(int n)
+        {
+            yield return n;
+        }
+
         [Test]
         public void Factors()
         {
-            var primeFactors = PrimeFactorsCalculator.PrimeFactorsOf(1);
-            Assert.That(primeFactors, Is.Empty);
+            Assert.That(PrimeFactorsCalculator.PrimeFactorsOf(1), Is.Empty);
+            CollectionAssert.AreEqual(PrimeFactorsCalculator.PrimeFactorsOf(2), ListOf(2));
         }
     }
 
@@ -22,7 +27,10 @@ namespace Katas.PrimeFactors
     {
         public static List<int> PrimeFactorsOf(int n)
         {
-            return new List<int>();
+            var factors = new List<int>();
+            if (n > 1)
+                factors.Add(n);
+            return factors;
         }
     }
 }
