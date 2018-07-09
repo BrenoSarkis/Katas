@@ -36,22 +36,12 @@ namespace Katas.PrimeFactors
         {
             var factors = new List<int>();
 
-            if (n > 1)
+            for (int divisor = 2; n > 1; divisor++)
             {
-                for (; n % 2 == 0; n /= 2)
+                for (; n % divisor == 0; n /= divisor)
                 {
-                    factors.Add(2);
+                    factors.Add(divisor);
                 }
-
-                for (; n % 3 == 0; n /= 3)
-                {
-                    factors.Add(3);
-                }
-            }
-
-            if (n > 1)
-            {
-                factors.Add(n);
             }
 
             return factors;
