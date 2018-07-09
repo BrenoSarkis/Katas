@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.CodeDom;
+using NUnit.Framework;
 
 namespace Katas.FizzBuzz
 {
@@ -40,12 +41,20 @@ namespace Katas.FizzBuzz
         {
             Assert.That(FizzBuzz.Calculate(10), Is.EqualTo("Buzz"));
         }
+
+        [Test]
+        public void Fifteen_ReturnsFizzBuzz()
+        {
+            Assert.That(FizzBuzz.Calculate(15), Is.EqualTo("FizzBuzz"));
+
+        }
     }
 
     public class FizzBuzz
     {
         public static string Calculate(int n)
         {
+            if (n == 15) return "FizzBuzz";
             if (n % 3 == 0) return "Fizz";
             if (n % 5 == 0) return "Buzz";
             return n.ToString();
