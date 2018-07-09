@@ -26,6 +26,7 @@ namespace Katas.PrimeFactors
             Assert.That(PrimeFactorsCalculator.PrimeFactorsOf(6), Is.EqualTo(ListOf(2, 3)));
             Assert.That(PrimeFactorsCalculator.PrimeFactorsOf(7), Is.EqualTo(ListOf(7)));
             Assert.That(PrimeFactorsCalculator.PrimeFactorsOf(8), Is.EqualTo(ListOf(2, 2, 2)));
+            Assert.That(PrimeFactorsCalculator.PrimeFactorsOf(9), Is.EqualTo(ListOf(3, 3)));
         }
     }
 
@@ -37,10 +38,14 @@ namespace Katas.PrimeFactors
 
             if (n > 1)
             {
-                while (n % 2 == 0)
+                for (; n % 2 == 0; n /= 2)
                 {
                     factors.Add(2);
-                    n /= 2;
+                }
+
+                for (; n % 3 == 0; n /= 3)
+                {
+                    factors.Add(3);
                 }
             }
 
