@@ -16,12 +16,19 @@ namespace Katas.FizzBuzz
         {
             Assert.That(FizzBuzz.Calculate(2), Is.EqualTo("2"));
         }
+
+        [Test]
+        public void Three_ReturnsFizz()
+        {
+            Assert.That(FizzBuzz.Calculate(3), Is.EqualTo("Fizz"));
+        }
     }
 
     public class FizzBuzz
     {
         public static string Calculate(int n)
         {
+            if (n == 3) return "Fizz";
             return n.ToString();
         } 
     }
