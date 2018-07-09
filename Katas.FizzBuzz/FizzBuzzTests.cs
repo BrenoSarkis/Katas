@@ -6,52 +6,20 @@ namespace Katas.FizzBuzz
     [TestFixture]
     public class FizzBuzzTests
     {
-        [Test]
-        public void One_ReturnsOne()
+        [TestCase(1, "1")]
+        [TestCase(2, "2")]
+        [TestCase(3, "Fizz")]
+        [TestCase(4, "4")]
+        [TestCase(5, "Buzz")]
+        [TestCase(6, "Fizz")]
+        [TestCase(9, "Fizz")]
+        [TestCase(10, "Buzz")]
+        [TestCase(15, "FizzBuzz")]
+        [TestCase(20, "Buzz")]
+        [TestCase(30, "FizzBuzz")]
+        public void FizzBuzzTest(int n, string expectedResult)
         {
-            Assert.That(FizzBuzz.Calculate(1), Is.EqualTo("1"));
-        }
-
-        [Test]
-        public void Two_ReturnsTwo()
-        {
-            Assert.That(FizzBuzz.Calculate(2), Is.EqualTo("2"));
-        }
-
-        [Test]
-        public void Three_ReturnsFizz()
-        {
-            Assert.That(FizzBuzz.Calculate(3), Is.EqualTo("Fizz"));
-        }
-
-        [Test]
-        public void Five_ReturnsBuzz()
-        {
-            Assert.That(FizzBuzz.Calculate(5), Is.EqualTo("Buzz"));
-        }
-
-        [Test]
-        public void Six_ReturnsFizz()
-        {
-            Assert.That(FizzBuzz.Calculate(6), Is.EqualTo("Fizz"));
-        }
-
-        [Test]
-        public void Ten_ReturnsBuzz()
-        {
-            Assert.That(FizzBuzz.Calculate(10), Is.EqualTo("Buzz"));
-        }
-
-        [Test]
-        public void Fifteen_ReturnsFizzBuzz()
-        {
-            Assert.That(FizzBuzz.Calculate(15), Is.EqualTo("FizzBuzz"));
-        }
-
-        [Test]
-        public void Thirty_ReturnsFizzBuzz()
-        {
-            Assert.That(FizzBuzz.Calculate(30), Is.EqualTo("FizzBuzz"));
+            Assert.That(FizzBuzz.Calculate(n), Is.EqualTo(expectedResult));
         }
     }
 
