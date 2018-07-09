@@ -34,6 +34,12 @@ namespace Katas.FizzBuzz
         {
             Assert.That(FizzBuzz.Calculate(6), Is.EqualTo("Fizz"));
         }
+
+        [Test]
+        public void Ten_ReturnsBuzz()
+        {
+            Assert.That(FizzBuzz.Calculate(10), Is.EqualTo("Buzz"));
+        }
     }
 
     public class FizzBuzz
@@ -41,7 +47,7 @@ namespace Katas.FizzBuzz
         public static string Calculate(int n)
         {
             if (n % 3 == 0) return "Fizz";
-            if (n == 5) return "Buzz";
+            if (n % 5 == 0) return "Buzz";
             return n.ToString();
         } 
     }
