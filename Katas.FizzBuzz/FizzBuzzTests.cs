@@ -30,10 +30,29 @@ namespace Katas.FizzBuzz
     {
         public static string Calculate(int n)
         {
-            if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
-            if (n % 3 == 0 || n.ToString().Contains("3")) return "Fizz";
-            if (n % 5 == 0 || n.ToString().Contains("5")) return "Buzz";
+            if (IsDivisibleByThree(n) && IsDivisibleByFive(n)) return "FizzBuzz";
+            if (IsDivisibleByThree(n) || ContainsAThree(n)) return "Fizz";
+            if (IsDivisibleByFive(n) || ContainsAFive(n)) return "Buzz";
             return n.ToString();
+        }
+
+        private static bool IsDivisibleByThree(int n)
+        {
+            return n % 3 == 0;
+        }
+        private static bool IsDivisibleByFive(int n)
+        {
+            return n % 5 == 0;
+        }
+
+        private static bool ContainsAThree(int n)
+        {
+            return n.ToString().Contains("3");
+        }
+
+        private static bool ContainsAFive(int n)
+        {
+            return n.ToString().Contains("5");
         }
     }
 }
