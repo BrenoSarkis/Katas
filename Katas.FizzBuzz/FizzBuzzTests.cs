@@ -14,8 +14,10 @@ namespace Katas.FizzBuzz
         [TestCase(6, "Fizz")]
         [TestCase(9, "Fizz")]
         [TestCase(10, "Buzz")]
+        [TestCase(13, "Fizz")]
         [TestCase(15, "FizzBuzz")]
         [TestCase(20, "Buzz")]
+        [TestCase(23, "Fizz")]
         [TestCase(30, "FizzBuzz")]
         public void FizzBuzzTest(int n, string expectedResult)
         {
@@ -28,7 +30,7 @@ namespace Katas.FizzBuzz
         public static string Calculate(int n)
         {
             if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
-            if (n % 3 == 0) return "Fizz";
+            if (n % 3 == 0 || n.ToString().Contains("3")) return "Fizz";
             if (n % 5 == 0) return "Buzz";
             return n.ToString();
         }
