@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.PrimeFactors", "Katas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.FizzBuzz", "Katas.FizzBuzz\Katas.FizzBuzz.csproj", "{BA15D6D4-86AA-4CDE-8F0E-740D78C6E7C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.Diamond", "Katas.Diamond\Katas.Diamond.csproj", "{DE626264-3D15-4890-94E5-A735188F0369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BA15D6D4-86AA-4CDE-8F0E-740D78C6E7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA15D6D4-86AA-4CDE-8F0E-740D78C6E7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA15D6D4-86AA-4CDE-8F0E-740D78C6E7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE626264-3D15-4890-94E5-A735188F0369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE626264-3D15-4890-94E5-A735188F0369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE626264-3D15-4890-94E5-A735188F0369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE626264-3D15-4890-94E5-A735188F0369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
