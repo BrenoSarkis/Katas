@@ -6,9 +6,15 @@ namespace Katas.Diamond
     public class DiamondTests
     {
         [Test]
-        public void DiamondA()
+        public void DiamondOfA()
         {
-            Assert.That(Diamond.GenerateFor('C'), Is.EqualTo("A"));
+            Assert.That(Diamond.GenerateFor('A'), Is.EqualTo("A"));
+        }
+
+        [Test]
+        public void DiamondOfB()
+        {
+            Assert.That(Diamond.GenerateFor('B'), Is.EqualTo(DiamondCatalog.B));
         }
     }
 
@@ -16,7 +22,20 @@ namespace Katas.Diamond
     {
         public static string GenerateFor(char letter)
         {
+            if (letter == 'B')
+            {
+                return DiamondCatalog.B;
+            }
             return "A";
         }
+
+
+    }
+
+    public class DiamondCatalog
+    {
+        public static string B = @"A
+                                  B B
+                                   A";
     }
 }
